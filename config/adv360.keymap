@@ -23,18 +23,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <100>;
             flavor = "hold-preferred";
-            bindings =
-                <&kp>,
-                <&kp>;
+            bindings = <&kp>, <&kp>;
 
             quick-tap-ms = <0>;
         };
+
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
             label = "HMR";
-            bindings =
-                <&kp>,
-                <&kp>;
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <120>;
@@ -44,12 +41,11 @@
             hold-trigger-key-positions = <0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 35 36 46 47 48 49 50 51 52 60 61 62 63 64 65 66 67 37 38 53 68 69 70>;
             hold-trigger-on-release;
         };
+
         hml: hml {
             compatible = "zmk,behavior-hold-tap";
             label = "HML";
-            bindings =
-                <&kp>,
-                <&kp>;
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <100>;
@@ -58,6 +54,17 @@
             flavor = "balanced";
             hold-trigger-key-positions = <7 8 9 10 11 12 13 21 22 23 24 25 26 27 38 39 40 41 42 43 44 45 54 55 56 57 58 59 69 70 71 72 73 74 75 35 36 37 38 52 53 65 66 67 68 69>;
         };
+
+        hmr_test: hmr_test {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR_TEST";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+        };
     };
 
     keymap {
@@ -65,11 +72,11 @@
 
         default_layer {
             bindings = <
-&kp BACKSLASH      &kp EXCLAMATION    &kp AT_SIGN          &kp POUND        &kp DOLLAR           &kp PERCENT  &tog 1                                                                                         &mo 3              &kp CARET  &kp AMPERSAND         &kp ASTERISK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE
-&kp GRAVE          &kp Q              &kp W                &lt 1 E          &lt 2 R              &kp T        &kp LEFT_BRACKET                                                                               &kp RIGHT_BRACKET  &kp Y      &kp U                 &kp I             &kp O                 &kp P                  &kp EQUAL
-&kp DOUBLE_QUOTES  &hml LEFT_SHIFT A  &hml LEFT_CONTROL S  &hml LEFT_ALT D  &hml LEFT_COMMAND F  &kp G        &kp LEFT_BRACE    &kp C_MUTE     &kp C_PLAY_PAUSE                 &kp C_PREVIOUS   &kp C_NEXT  &kp RIGHT_BRACE    &kp H      &hmr RIGHT_COMMAND J  &hmr RIGHT_ALT K  &hmr RIGHT_CONTROL L  &hmr RSHIFT SEMICOLON  &kp MINUS
-&kp SINGLE_QUOTE   &kp Z              &kp X                &kp C            &kp V                &kp B                                         &kp C_VOL_DN                     &kp C_VOLUME_UP                                 &kp N      &kp M                 &kp COMMA         &kp DOT               &kp FSLH               &kp UNDERSCORE
-&mo 2              &none              &none                &kp LEFT         &kp RIGHT                         &kp SPACE         &kp BACKSPACE  &hm LS(LA(LC(LGUI))) ESCAPE      &kp ESC          &kp ENTER   &kp TAB                       &kp DOWN              &kp UP            &none                 &none                  &mo 2
+&kp BACKSLASH      &kp EXCLAMATION    &kp AT_SIGN          &kp POUND        &kp DOLLAR           &kp PERCENT  &tog 1                                                                                         &mo 3              &kp CARET  &kp AMPERSAND            &kp ASTERISK      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE
+&kp GRAVE          &kp Q              &kp W                &lt 1 E          &lt 2 R              &kp T        &kp LEFT_BRACKET                                                                               &kp RIGHT_BRACKET  &kp Y      &kp U                    &kp I             &kp O                 &kp P                  &kp EQUAL
+&kp DOUBLE_QUOTES  &hml LEFT_SHIFT A  &hml LEFT_CONTROL S  &hml LEFT_ALT D  &hml LEFT_COMMAND F  &kp G        &kp LEFT_BRACE    &kp C_MUTE     &kp C_PLAY_PAUSE                 &kp C_PREVIOUS   &kp C_NEXT  &kp RIGHT_BRACE    &kp H      &hmr_test RIGHT_SHIFT J  &hmr RIGHT_ALT K  &hmr RIGHT_CONTROL L  &hmr RSHIFT SEMICOLON  &kp MINUS
+&kp SINGLE_QUOTE   &kp Z              &kp X                &kp C            &kp V                &kp B                                         &kp C_VOL_DN                     &kp C_VOLUME_UP                                 &kp N      &kp M                    &kp COMMA         &kp DOT               &kp FSLH               &kp UNDERSCORE
+&mo 2              &none              &none                &kp LEFT         &kp RIGHT                         &kp SPACE         &kp BACKSPACE  &hm LS(LA(LC(LGUI))) ESCAPE      &kp ESC          &kp ENTER   &kp TAB                       &kp DOWN                 &kp UP            &none                 &none                  &mo 2
             >;
         };
 
